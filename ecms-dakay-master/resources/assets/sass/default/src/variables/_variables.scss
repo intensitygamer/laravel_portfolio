@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/**
+** Typography
+**/
+$sans-serif: 'Arial', 'Sans-serif' !default;
+$font-body: 'Open Sans', $sans-serif !default;
+$font-heading: $font-body !default;
+$font-tertiary:  'Helvetica Neue', $sans-serif !default;
+
+/**
+** Font sizes
+**/
+$font-size-primary: 12px !default;
+$h1-size: $font-size-primary * 2.5 !default;
+$h2-size: $font-size-primary * 2.4 !default;
+$h3-size: $font-size-primary * 1.75 !default;
+$h4-size: $font-size-primary * 1.5 !default;
+$h5-size: $font-size-primary * 1.25 !default;
+$h6-size: $font-size-primary !default;
+
+/**
+** Font weights font light weight and etc...
+**/
+$or-body: 400;
+$os-body: 600;
+$ob-body: 700;
+
+$thin-weight: 400;
+$regular-weight: 600;
+$bold-weight: 700;
+
+/**
+** Line height
+**/
+$font-line-height:20px;
+
+/**
+** Colors
+**/
+$red: #ff0000;

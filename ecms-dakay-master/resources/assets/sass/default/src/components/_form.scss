@@ -1,0 +1,31 @@
+.form-control{
+  @include border-radius(2px);
+  @include box-shadow(none);
+  @include form-control-focus(#e0a30d);
+}
+
+.tmx{
+  line-height: 33px;
+  color: #333;
+}
+
+.text-area-uniform-height{
+  textarea{
+    height:178px!important;
+  }
+}
+
+.equipment-row{
+  font-size:12px;
+  label {
+    font-weight: normal;
+  }
+  .form-control{
+    font-size: 12px;
+    height: auto;
+    padding: 5px 10px;
+  }
+  .form-group{
+    margin-bottom: 8px;
+  }
+}

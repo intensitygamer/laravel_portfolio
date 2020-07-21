@@ -1,0 +1,16 @@
+{
+    "name": "Frontoffice",
+    "alias": "frontoffice",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Frontoffice\\Providers\\FrontofficeServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

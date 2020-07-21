@@ -1,0 +1,52 @@
+.top-bar{
+  margin: 0;
+  padding: 8px 20px;
+  background-color: #3187bf;
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#2d85be),color-stop(85%,#3693cf),to(#1f5a80));
+  background-image: -webkit-linear-gradient(#2d85be,#3693cf 85%,#1f5a80);
+  background-image: -moz-linear-gradient(top,#2d85be,#3693cf 85%,#1f5a80);
+  background-image: -o-linear-gradient(#2d85be,#3693cf 85%,#1f5a80);
+  background-image: linear-gradient(#2d85be,#3693cf 85%,#1f5a80);
+  background-repeat: no-repeat;
+  -webkit-border-radius: 0 4px 0 0;
+  -moz-border-radius: 0 4px 0 0;
+  border-radius: 0 4px 0 0;
+  .gutter{
+    &.row{
+      margin-right: -7px;
+      margin-left: -7px;
+    }
+  }
+  .page-title{
+    margin: 8px 0 0;
+    h4{
+      margin: 0;
+      color: #fff;
+      font-size: 21px;
+    }
+    @include breakpoint($min: 320px, $max: 767px) {
+      text-align: center;
+    }
+  }
+  .right-stats{
+    float: right;
+    li{
+      display: inline-block;
+      margin-left: 7px;
+      a{
+        min-width: 100px;
+        vertical-align: middle;
+        span{
+          font-size: 24px;
+          line-height: 100%;
+          margin-right: 5px;
+        }
+      }
+    }
+    @include breakpoint($min: 320px, $max: 767px) {
+      float: none;
+      margin: 20px auto 10px;
+      text-align: center;
+    }
+  }
+}

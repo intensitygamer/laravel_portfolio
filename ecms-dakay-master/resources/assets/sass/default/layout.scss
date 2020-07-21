@@ -1,0 +1,43 @@
+@import "src/default";
+
+body{
+  font: 400 14px 'Open Sans',sans-serif;
+  line-height: 1.6;
+  color: #101010;
+  background: #262626;
+}
+
+.page-wrapper{
+  margin: 0 5px;
+  position: relative;
+}
+
+.main-container{
+  padding: 20px;
+  min-height: 560px;
+  background: #fff;
+  margin:0;
+}
+
+.browserupgrade{
+  background: #fff;
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #990000;
+  font-weight: bold;
+}
+
+.sub-menu--pages{
+  ul{
+    font-size:13px;
+    font-weight:$bold-weight;
+  }
+}
+
+.modal-header{
+  .close{
+    color:#fafafa;
+    opacity:1.0;
+  }
+}
+

@@ -1,0 +1,57 @@
+/**
+* background colors
+*/
+.blue-bg{
+  background: #3693cf;
+}
+.red-bg{
+  background: #f35454;
+}
+
+/**
+* margins and paddings
+*/
+.no-margin{
+  margin:0;
+}
+.no-padding{
+  padding:0;
+}
+
+/**
+* animated
+*/
+.circless {
+  display: block;
+  position: absolute;
+  background: rgba(0, 0, 0, .3);
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  overflow: hidden
+}
+
+.circless.animate {
+  -webkit-animation: effect .65s linear;
+  animation: effect .65s linear
+}
+
+@-webkit-keyframes effect {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5)
+  }
+}
+
+@keyframes effect {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5)
+  }
+}
+

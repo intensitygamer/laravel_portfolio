@@ -1,0 +1,155 @@
+#bsPhotoGalleryModal {
+  .modal-content {
+    border-radius: 0;
+  }
+  .modal-dialog img {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .modal-body {
+    padding: 0px !important;
+  }
+  .bsp-close {
+    position: absolute;
+    right: -14px;
+    top: -11px;
+    font-size: 30px;
+    color: #fff;
+    text-shadow: 1px 1px 18px #000;
+    &:hover {
+      cursor: pointer;
+      opacity: .6;
+      text-shadow: none;
+    }
+  }
+}
+
+.bspHasModal {
+  cursor: pointer;
+  .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.imgWrapper {
+  overflow: hidden;
+  max-height: 99px;
+}
+
+a.bsp-controls {
+  position: absolute;
+  top: 44%;
+  font-size: 26px;
+  color: #fff;
+  text-shadow: 1px 1px 18px #000;
+  &:visited, &:active {
+    position: absolute;
+    top: 44%;
+    font-size: 26px;
+    color: #fff;
+    text-shadow: 1px 1px 18px #000;
+  }
+  &.next {
+    right: -10px;
+  }
+  &.previous {
+    left: -10px;
+  }
+  &:hover {
+    opacity: .6;
+    text-shadow: none;
+  }
+}
+
+.bsp-text-container {
+  clear: both;
+  display: block;
+  padding-bottom: 5px;
+}
+
+#bsPhotoGalleryModal {
+  h6 {
+    margin-bottom: 0;
+    font-weight: bold;
+    color: #000;
+    font-size: 14px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-bottom: 5px;
+  }
+  .pText {
+    font-size: 11px;
+    margin-bottom: 0px;
+    padding: 0 12px 5px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .col-xxs-12 {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.box-of-photos{
+  padding: 20px 0;
+  border: 2px dashed #ccc;
+  height: 725px;
+  overflow: scroll;
+  .photo-title{
+    padding: 0px 0 30px;
+    text-align: center;
+    font-size: 28px;
+    line-height: 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+  }
+  .no-photos{
+    text-align: center;
+    color:#990000;
+    font-size:14px;
+    font-weight: bold;
+  }
+
+  ul{
+    margin:0;
+    padding: 0;
+    list-style: none;
+    li{
+      margin-bottom: 20px;
+      .text{
+        font-size:11px;
+      }
+    }
+  }
+}
+
+
+.images-wrapper{
+  border: 1px dashed #ccc;
+  margin-bottom: 20px;
+  padding:20px;
+
+  .image-item{
+    margin-right: 15px;
+    margin-bottom: 20px;
+    .btn-remove{
+      color: #fff;
+      background: #ef6262;
+      font-size: 12px;
+    }
+  }
+
+  .note{
+    display: block;
+    clear: both;
+    overflow: hidden;
+    font-size: 12px;
+    color: #990000;
+  }
+}

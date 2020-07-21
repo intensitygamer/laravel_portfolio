@@ -1,0 +1,199 @@
+/**
+** CSS3 mixins
+**/
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin text-shadow($shadow...) {
+  text-shadow: $shadow;
+}
+
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin background-gradient($color1, $color2){
+  background: $color1;
+  background: -moz-linear-gradient(top, $color2 0%, $color1 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1a1d2b), color-stop(100%, $color1));
+  background: -webkit-linear-gradient(top, $color2 0%, $color1 100%);
+  background: -o-linear-gradient(top, $color2 0%, $color1 100%);
+  background: -ms-linear-gradient(top, $color2 0%, $color1 100%);
+  background: linear-gradient(to bottom, $color2 0%,$color1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$color2, endColorstr=$color1, GradientType=0 )
+}
+
+
+/**
+** Custom looping
+**/
+
+@mixin dynamic-loop($class-slug, $prefix ,$end){
+  @for $i from 0 through $end{
+    .#{$class-slug}-#{$prefix}#{$i}{
+      #{$class-slug}: #{$prefix} ($i + 0px) !important;
+    }
+  }
+}
+
+@mixin dynamic-loop-by-10($class-slug, $end){
+  @for $i from 1 through $end{
+    .#{$class-slug}-#{$i}0{
+      #{$class-slug}: ($i + 0px) * 10 !important;
+    }
+  }
+}
+
+@mixin dynamic-loop-by-20($class-slug, $end){
+  @for $i from 2 through $end{
+    .#{$class-slug}-#{$i}0{
+      #{$class-slug}: ($i + 0px) * 10 !important;
+    }
+  }
+}
+
+/**
+** Responsive ratio example:
+    responsive-ratio(16:9)
+**/
+
+@mixin responsive-ratio($x,$y, $pseudo: false) {
+  $padding: unquote( ( $y / $x ) * 100 + '%' );
+  @if $pseudo {
+    &:before {
+      @include pseudo($pos: relative);
+      width: 100%;
+      padding-top: $padding;
+    }
+  } @else {
+    padding-top: $padding;
+  }
+}
+
+/**
+** Pseudo includes example:
+  div::after {
+    @include pseudo;
+  }
+**/
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+
+/**
+** Placeholders includes example:
+  @include input-placeholder {
+    color: $grey;
+  }
+**/
+
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+/**
+** Hardware variant
+**/
+
+@mixin hardware($backface: true, $perspective: 1000) {
+  @if $backface {
+    backface-visibility: hidden;
+  }
+  perspective: $perspective;
+}
+
+/**
+** Hidden
+**/
+@mixin hidden {
+  display: none;
+  visibility: hidden;
+}
+
+
+/**
+** Retina images example:
+  .element {
+      @include retina {
+			background-image: url(../img/background@2x.png);
+		}
+	}
+**/
+
+@mixin retina {
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (-moz-min-device-pixel-ratio: 1.5),
+  only screen and (-o-min-device-pixel-ratio: 3 / 2),
+  only screen and (min-device-pixel-ratio: 1.5),
+  only screen and (min-resolution: 1.5dppx) {
+    @content;
+  }
+}
+
+/**
+** Bootstrap Mixins overriding
+**/
+
+@mixin form-control-focus($color) {
+  &:focus {
+    border-color: $color;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}
+
+/**
+** Margin and padding set to zero example:
+	example: top & bottom margin set to $spacing-unit
+	.element {
+		@include push--ends;
+	}
+	example: left & right padding set to $spacing-unit--small
+	.element {
+		@include soft--sides($spacing-unit--small);
+	}
+**/
+
+
+// add/remove margins
+
+@mixin push--ends($spacing: $spacing-unit) { margin: { top: $spacing; bottom: $spacing; } }
+@mixin push--sides($spacing: $spacing-unit) { margin: { left: $spacing; right: $spacing; } }
+
+@mixin push--auto { margin: { left: auto; right: auto; } }
+@mixin offset--sides($spacing: $spacing-unit) { margin: { left: -$spacing; right: -$spacing; } }
+
+@mixin flush--ends { margin: { top: 0; bottom: 0; } }
+@mixin flush--sides { margin: { left: 0; right: 0; } }
+
+
+// add/remove paddings
+
+@mixin soft--ends($spacing: $spacing-unit) { padding: { top: $spacing; bottom: $spacing; } }
+@mixin soft--sides($spacing: $spacing-unit) { padding: { left: $spacing; right: $spacing; } }
+
+@mixin hard--ends { padding: { top: 0; bottom: 0; } }
+@mixin hard--sides { padding: { left: 0; right: 0; } }

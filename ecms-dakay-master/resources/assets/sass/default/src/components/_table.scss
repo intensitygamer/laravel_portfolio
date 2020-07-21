@@ -1,0 +1,88 @@
+.table-ecms{
+  thead{
+    tr{
+      th{
+        background: #0f5485;
+        color:#fff;
+      }
+      &.top-header{
+        th{
+          background: #3082bd;
+          color: #fff;
+          font-size: 15px;
+          text-align: center;
+          padding: 10px;
+        }
+      }
+    }
+  }
+
+  tfoot{
+    tr{
+      &.total-consumption{
+        td{
+          background:#fff;
+          color:#333;
+          font-weight: bold;
+        }
+      }
+      &.total-stock{
+        td{
+          background:#fff;
+          color:#333;
+          font-weight: bold;
+        }
+      }
+      &.lubricant{
+        font-size:12px;
+      }
+    }
+  }
+}
+
+
+.table-hover > tbody > tr:hover {
+  background-color: #d7eeff;
+}
+
+/**
+** Checker
+**/
+.footer-checker{
+  .title{
+    font-weight: bold;
+    margin-top: -25px;
+    font-size: 20px;
+  }
+  .name{
+    width: 100%;
+    border-top: 1px solid #000;
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+  }
+  .position{
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.vertical-align-top{
+  vertical-align: top!important;
+}
+
+.vertical-align-middle{
+  vertical-align: middle!important;
+}
+
+.wraptable-image{
+  img{
+    width:400px;
+  }
+  span{
+    padding-left: 20px;
+    padding-top: 30px;
+    display: inline-block;
+  }
+}
